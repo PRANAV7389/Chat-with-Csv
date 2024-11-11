@@ -5,6 +5,6 @@ sweetviz
 pandasai
 setuptools
 pyyaml
-
+numpy
 
 
