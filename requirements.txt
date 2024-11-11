@@ -6,5 +6,6 @@ pandasai
 setuptools
 pyyaml
 numpy
+warnings
 
 
