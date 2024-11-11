@@ -4,6 +4,7 @@ plotly
 sweetviz
 pandasai
 setuptools
+pyyaml
 
 
 
