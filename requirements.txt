@@ -3,5 +3,7 @@ pandas
 plotly
 sweetviz
 pandasai
+setuptools
+
 
 
