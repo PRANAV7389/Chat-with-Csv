@@ -294,7 +294,7 @@ elif menu == "Chat with Data":
                 else:
                     st.warning("Please enter a prompt to chat with the data!")
         else:
-            st.info("You can get your free API key by signing up at [Bamboo](https://bamboo.com).")
+            st.info("You can get your free API key by signing up at [PandasAI](https://pandabi.ai).")
 
 
 # Footer Section with your name and LinkedIn link
