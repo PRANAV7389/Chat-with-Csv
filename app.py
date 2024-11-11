@@ -174,14 +174,7 @@ if menu == "Upload Data":
             missing_values = df.isnull().sum()
             st.write(missing_values[missing_values > 0])
 
-        # Generate Sweetviz Report
-        with st.expander("Generate Data Profiling Report", expanded=False):
-            st.write("This option generates a comprehensive report of your dataset using Sweetviz.")
-            if st.checkbox("Generate Sweetviz Report"):
-                report = sv.analyze(df)
-                report.show_html('sweetviz_report.html')
-                st.markdown("You can download the generated report [here](sweetviz_report.html).")
-
+        
         # Clear Uploaded File Option
         if st.button("Clear Uploaded File"):
             st.session_state.pop("uploaded_file", None)
