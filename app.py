@@ -178,7 +178,8 @@ if menu == "Upload Data":
             del st.session_state.uploaded_file  # Properly delete the uploaded file
         if "df" in st.session_state:
             del st.session_state.df  # Properly delete the DataFrame
-        st.experimental_rerun()
+        st.session_state.clear()  # Clear the session state
+        st.cache_data.clear()  # Clear cached data (if needed)
     else:
         # Information if file was uploaded previously
         if 'uploaded_file' in st.session_state:
