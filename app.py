@@ -4,8 +4,6 @@ import plotly.express as px
 import sweetviz as sv
 from pandasai import SmartDataframe
 from pandasai.llm import BambooLLM
-import warnings
-warnings.filterwarnings("ignore", category=VisibleDeprecationWarning)
 
 # Set page config for Streamlit app
 st.set_page_config(page_title='Unlock Data Insights', layout='centered')
