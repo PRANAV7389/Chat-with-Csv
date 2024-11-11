@@ -275,8 +275,11 @@ elif menu == "Chat with Data":
                     try:
                         # Get the response from PandasAI
                         response = df_chat.chat(prompt)
-                        if isinstance(response, px.Figure):
-                            st.plotly_chart(response)
+                        if isinstance(response, str) and response.endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                            st.image(response, caption="Generated Image", use_column_width=True)
+                        elif isinstance(response, bytes):
+                            image = Image.open(io.BytesIO(response))
+                            st.image(image, caption="Generated Image", use_column_width=True)
                         else:
                             st.write(f"**Response:** {response}")
                     except Exception as e:
