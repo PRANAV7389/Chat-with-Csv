@@ -1,6 +1,7 @@
-pandas
-pillow
-plotly
 streamlit
+pandas
+plotly
+sweetviz
 pandasai
+
 
