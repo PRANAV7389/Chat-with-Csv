@@ -1,3 +1,5 @@
-pandas
-pandasai
 streamlit
+pandas
+plotly
+sweetviz
+pandasai
