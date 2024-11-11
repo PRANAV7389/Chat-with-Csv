@@ -177,9 +177,14 @@ if menu == "Upload Data":
         
         # Clear Uploaded File Option
         if st.button("Clear Uploaded File"):
-            st.session_state.pop("uploaded_file", None)
-            st.session_state.pop("df", None)
-            st.experimental_rerun()
+        # Safely remove keys from session_state if they exist
+            if "uploaded_file" in st.session_state:
+                st.session_state.pop("uploaded_file")
+            if "df" in st.session_state:
+                st.session_state.pop("df")
+
+        # Rerun the app to reset the state
+            st.rerun()
 
     else:
         # Information if file was uploaded previously
