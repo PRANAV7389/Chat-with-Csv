@@ -173,7 +173,7 @@ if menu == "Upload Data":
             st.markdown("### Missing Values Overview")
             missing_values = df.isnull().sum()
             st.write(missing_values[missing_values > 0])
-        if st.button("Clear Uploaded File"):
+         if st.button("Clear Uploaded File"):
             if "uploaded_file" in st.session_state:
                 del st.session_state.uploaded_file  # Properly delete the uploaded file
             if "df" in st.session_state:
