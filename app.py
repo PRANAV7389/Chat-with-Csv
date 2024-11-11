@@ -175,15 +175,17 @@ if menu == "Upload Data":
             st.write(missing_values[missing_values > 0])
 
         
-        # Clear Uploaded File Option
-        if st.button("Clear Uploaded File"):
-        # Safely remove keys from session_state if they exist
+       if st.button("Clear Uploaded File"):
+         # Safely remove keys from session_state if they exist
             if "uploaded_file" in st.session_state:
                 st.session_state.pop("uploaded_file")
             if "df" in st.session_state:
                 st.session_state.pop("df")
 
-        # Rerun the app to reset the state
+            # Reset the file uploader (this will clear the file from the UI)
+            st.file_uploader("Upload a CSV file", type=["csv"], key="file_uploader")
+
+            # Rerun the app to reset the state
             st.rerun()
 
     else:
