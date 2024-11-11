@@ -1,7 +1,6 @@
-pandas==1.5.3
-pillow==8.0.0
-plotly==5.8.0
-streamlit==1.20.0
-pandasai==0.3.0
-bamboo-llm==0.1.0
+pandas
+pillow
+plotly
+streamlit
+pandasai
 
