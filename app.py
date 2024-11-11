@@ -275,7 +275,10 @@ elif menu == "Chat with Data":
                     try:
                         # Get the response from PandasAI
                         response = df_chat.chat(prompt)
-                        st.write(f"**Response:** {response}")
+                        if isinstance(response, px.Figure):
+                            st.plotly_chart(response)
+                        else:
+                            st.write(f"**Response:** {response}")
                     except Exception as e:
                         st.error(f"Error generating response: {e}")
                 else:
