@@ -213,6 +213,9 @@ elif menu == "Generate Plot":
             x_axis = st.selectbox('Select the X-axis', options=columns + ["None"])
             y_axis = st.selectbox('Select the Y-axis', options=columns + ["None"])
 
+            # Aggregation options
+            aggregation = st.selectbox("Select Aggregation", ["None", "Sum", "Average", "Count"])
+
             # Available plot types
             plot_list = ['Line Plot', 'Bar Chart', 'Scatter Plot', 'Distribution Plot', 'Count Plot', 'Box Plot', 'Heatmap']
             plot_type = st.selectbox('Select the type of plot', options=plot_list)
@@ -223,26 +226,36 @@ elif menu == "Generate Plot":
             x_axis_label = st.text_input('Enter label for X-axis', x_axis)
             y_axis_label = st.text_input('Enter label for Y-axis', y_axis)
 
+        # Aggregating data based on selection
+        if aggregation != "None":
+            if aggregation == "Sum":
+                df = df.groupby(x_axis)[y_axis].sum().reset_index()
+            elif aggregation == "Average":
+                df = df.groupby(x_axis)[y_axis].mean().reset_index()
+            elif aggregation == "Count":
+                df = df.groupby(x_axis)[y_axis].count().reset_index()
+
         # Generating Plot dynamically
         if x_axis != "None" and y_axis != "None":
             if plot_type == 'Line Plot':
                 fig = px.line(df, x=x_axis, y=y_axis, title=plot_title, color_discrete_sequence=[color])
             elif plot_type == 'Bar Chart':
-                fig = px.bar(df, x=x_axis, y=y_axis, title=plot_title, color=color)
+                fig = px.bar(df, x=x_axis, y=y_axis, title=plot_title, color_discrete_sequence=[color])  # Fixed here
             elif plot_type == 'Scatter Plot':
-                fig = px.scatter(df, x=x_axis, y=y_axis, title=plot_title, color=color)
+                fig = px.scatter(df, x=x_axis, y=y_axis, title=plot_title, color_discrete_sequence=[color])  # Same here
             elif plot_type == 'Distribution Plot':
-                fig = px.histogram(df, x=x_axis, marginal="rug", title=plot_title)
+                fig = px.histogram(df, x=y_axis, title=plot_title, color_discrete_sequence=[color])  # Changed here
             elif plot_type == 'Count Plot':
-                fig = px.histogram(df, x=x_axis, title=plot_title, color_discrete_sequence=[color])
+                fig = px.histogram(df, x=x_axis, title=plot_title, color_discrete_sequence=[color])  # Changed here
             elif plot_type == 'Box Plot':
-                fig = px.box(df, x=x_axis, y=y_axis, title=plot_title, color=color)
+                fig = px.box(df, x=x_axis, y=y_axis, title=plot_title, color_discrete_sequence=[color])  # Changed here
             elif plot_type == 'Heatmap':
-                fig = px.imshow(df.corr(), title=plot_title)
+                fig = px.imshow(df.corr(), title=plot_title)  # Changed for heatmap
 
+            # Display plot
             st.plotly_chart(fig)
-        else:
-            st.warning("Please select both X and Y axis to generate a plot.")
+
+
 
 # Chat with Data Page
 elif menu == "Chat with Data":
