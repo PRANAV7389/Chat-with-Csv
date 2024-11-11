@@ -295,3 +295,16 @@ elif menu == "Chat with Data":
                     st.warning("Please enter a prompt to chat with the data!")
         else:
             st.info("You can get your free API key by signing up at [Bamboo](https://bamboo.com).")
+
+
+# Footer Section with your name and LinkedIn link
+st.markdown("---")
+st.markdown("### Created by [Pranav Sharma](https://www.linkedin.com/in/pranav-sharma/)")
+st.markdown(
+    """
+    <a href="https://www.linkedin.com/in/pranav-sharma/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/LinkedIn_Logo_2023.svg" alt="LinkedIn" width="30"/>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
