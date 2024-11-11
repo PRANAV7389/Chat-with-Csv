@@ -175,7 +175,7 @@ if menu == "Upload Data":
             st.write(missing_values[missing_values > 0])
 
         
-       if st.button("Clear Uploaded File"):
+        if st.button("Clear Uploaded File"):
            if "uploaded_file" in st.session_state:
                st.session_state.pop("uploaded_file")
             if "df" in st.session_state:
