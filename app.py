@@ -303,7 +303,7 @@ st.markdown("### Created by [Pranav Sharma](https://www.linkedin.com/in/pranav-s
 st.markdown(
     """
     <a href="https://www.linkedin.com/in/pranav-sharma/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/LinkedIn_Logo_2023.svg" alt="LinkedIn" width="30"/>
+        <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="LinkedIn" width="30"/>
     </a>
     """,
     unsafe_allow_html=True
