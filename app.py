@@ -299,10 +299,10 @@ elif menu == "Chat with Data":
 
 # Footer Section with your name and LinkedIn link
 st.markdown("---")
-st.markdown("### Created by [Pranav Sharma](https://www.linkedin.com/in/pranav-sharma/)")
+st.markdown("### Created by [Pranav Sharma](https://www.linkedin.com/in/pranav-sharma-7b45531b8)")
 st.markdown(
     """
-    <a href="https://www.linkedin.com/in/pranav-sharma/" target="_blank">
+    <a href="https://www.linkedin.com/in/pranav-sharma-7b45531b8" target="_blank">
         <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="LinkedIn" width="30"/>
     </a>
     """,
